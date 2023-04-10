@@ -1,12 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity ,} from 'react-native';
-
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 export default function App() {
  
   const [nome, setNome] = useState('');
   const [email, setEmai] = useState('');
   const [senha, setSenha] = useState('');
+
+  const auth = getAuth();
+  createUserWithEmailAndPassword(auth, nome, email, senha)
+    .then((userCredential) => {
+      console.log('USER:' + userCredential)
+    })
+    .catch((error) => {
+      console.log(' errorMessage:' + error)
+    });
 
   const cadastro = () => {
     alert('CADASTRO EFETUADO COM SUCESSO');
@@ -23,9 +32,9 @@ export default function App() {
       <Text> </Text>
       <Image style={styles.imagem} source={require('./login.png')} />
       <StatusBar style="auto" />
-      <TextInput placeholder="Seu Nome ..." style={styles.textInput} />
-      <TextInput placeholder="Seu Email" style={styles.textInput} />
-      <TextInput secureTextEntry={true} placeholder="Sua Senha" style={styles.textInput} />
+      <TextInput placeholder="Seu Nome ..." style={styles.textInput} onChangeText={setNome}/>
+      <TextInput placeholder="Seu Email" style={styles.textInput} onChangeText={setEmai}/>
+      <TextInput secureTextEntry={true} placeholder="Sua Senha" style={styles.textInput} onChangeText={setEmai}/>
     
     <TouchableOpacity style={styles.btnCadastro} onPress={()=>cadastro()}>
       
