@@ -72,17 +72,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
+    backgroundColor: '#696969'
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 16,
-    color: '#585858',
+    color: 'white',
   },
   textbtn:{
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#F5A9A9',
+    color: 'white',
     marginTop: 4,
   },
   image: {
@@ -90,18 +91,20 @@ const styles = StyleSheet.create({
     height: 200,
     justifyContent: 'center',
     marginBottom: 16,
+    borderRadius: 100,
   },
   input: {
     width: '100%',
     height: 40,
-    borderColor: 'gray',
+    borderColor: '#FF0000',
     borderWidth: 1,
     borderRadius: 4,
     marginVertical: 8,
     paddingHorizontal: 8,
+    backgroundColor:'white'
   },
   botao: {
-    backgroundColor: '#FF0000',
+    backgroundColor: '#B22222',
     borderRadius: 5,
     paddingLeft: 0,
     marginVertical: 8,
