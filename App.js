@@ -1,21 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Cadastro from './src/components/cadastro';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+// Importe das telas criadas 
+import Cadastro from './src/components/cadastro_usuario';
+import PermissionForm from './src/components/cadastro_permissoes';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Cadastro></Cadastro>
-      <StatusBar style="auto" />
-    </View>
+     <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='cadastro_usuario' component={Cadastro}/>
+        <Stack.Screen name='cadastro_permissao' component={PermissionForm}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
