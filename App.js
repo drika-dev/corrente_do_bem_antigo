@@ -16,4 +16,6 @@ export default function App() {
         <Stack.Screen name='cadastro_permissao' component={PermissionForm}/>
       </Stack.Navigator>
     </NavigationContainer>
+  );
+}
 
