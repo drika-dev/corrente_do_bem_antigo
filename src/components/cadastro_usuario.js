@@ -39,7 +39,7 @@ export default function Cadastro() {
   return (
     <View style={styles.container}>
       <Text> </Text>
-      <Image style={styles.imagem} source={require("./login.png")} />
+      <Image style={styles.imagem} source={require("../../assets/logo.png")} />
       <StatusBar style="auto" />
       <TextInput placeholder="Seu Nome ..." style={styles.textInput} />
       <TextInput placeholder="Seu Email" style={styles.textInput} />
